@@ -1,6 +1,7 @@
 import type { AppProps } from 'next/app';
 import Head from 'next/head';
 import '../assets/css/styles.scss';
+// @ts-ignore
 import Footer from '../components/Footer.tsx';
 function MyApp({ Component, pageProps }: AppProps) {
   return (

@@ -1,8 +1,14 @@
-import React, { useState } from 'react';
+import React, { useState, CSSProperties } from 'react';
 import Head from 'next/head';
-import Image from 'next/image';
 import Info from '../components/Info';
 import Button from '../components/Button';
+export interface MyCustomCSS extends CSSProperties {
+  '--justify-content'?: string;
+  '--flex'?: string;
+  '--button-custom-border'?: string;
+  '--content-length'?: string;
+  'align-items'?: string;
+}
 export default function Signup() {
   const [contents, setContents] = useState([
     {
@@ -37,11 +43,13 @@ export default function Signup() {
             <div>
               <div
                 className="content"
-                style={{
-                  '--align-items': 'flex-start',
-                  '--justify-content': 'flex-start',
-                  '--flex': '0 0 auto',
-                }}
+                style={
+                  {
+                    '--align-items': 'flex-start',
+                    '--justify-content': 'flex-start',
+                    '--flex': '0 0 auto',
+                  } as MyCustomCSS
+                }
               >
                 <span className="spacer vertical-space"></span>
                 <div className="logo-lg">
@@ -57,11 +65,13 @@ export default function Signup() {
                 <div className="content features">
                   <div
                     className="content"
-                    style={{
-                      '--align-items': 'stretch',
-                      '--justify-content': 'flex-start',
-                      '--flex': '0 0 auto',
-                    }}
+                    style={
+                      {
+                        '--align-items': 'stretch',
+                        '--justify-content': 'flex-start',
+                        '--flex': '0 0 auto',
+                      } as MyCustomCSS
+                    }
                   >
                     {contents.map((content, i) => (
                       <Info
@@ -75,11 +85,13 @@ export default function Signup() {
                   <span className="spacer"></span>
                   <div
                     className="content content-bottom"
-                    style={{
-                      '--justify-content': 'flex-start',
-                      '--align-items': 'stretch',
-                      '--flex': 1,
-                    }}
+                    style={
+                      {
+                        '--justify-content': 'flex-start',
+                        '--align-items': 'stretch',
+                        '--flex': '1',
+                      } as MyCustomCSS
+                    }
                   >
                     <div className="head">
                       Proudly Serving Amazing Companies
@@ -252,11 +264,13 @@ export default function Signup() {
           </div>
           <div
             className="content"
-            style={{
-              '--flex': 1,
-              '--justify-content': 'flex-start',
-              '--align-items': 'stretch',
-            }}
+            style={
+              {
+                '--flex': '1',
+                '--justify-content': 'flex-start',
+                '--align-items': 'stretch',
+              } as MyCustomCSS
+            }
           >
             <div className="signup-right">
               <div className="sm-logo">
@@ -426,11 +440,13 @@ export default function Signup() {
               </p>
               <div
                 className="content"
-                style={{
-                  '--justify-content': 'flex-start',
-                  '--align-items': 'stretch',
-                  '--flex': '0 0 auto',
-                }}
+                style={
+                  {
+                    '--justify-content': 'flex-start',
+                    '--align-items': 'stretch',
+                    '--flex': '0 0 auto',
+                  } as MyCustomCSS
+                }
               >
                 <span className="spacer" style={{ marginTop: 47 }}></span>
                 <p className="link-text">

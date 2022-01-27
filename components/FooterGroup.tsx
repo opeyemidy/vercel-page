@@ -1,6 +1,10 @@
-import React, { useState } from 'react';
+import React, { FC, useState } from 'react';
+interface Props {
+  title?: string;
+  items: object[];
+}
 
-export default function FooterGroup({ title, items }) {
+const FooterGroup: FC<Props> = ({ title, items }) => {
   const [checked, setChecked] = useState(false);
   return (
     <>
@@ -14,10 +18,10 @@ export default function FooterGroup({ title, items }) {
           <h3 onClick={() => setChecked(!checked)}>{title}</h3>
         </label>
         <ul className="footer-list">
-          {items.map(({ label, link }, i) => (
+          {items.map((item: any, i) => (
             <li className="footer-item" key={i}>
-              <a href={link} className="link link-secondary">
-                {label}
+              <a href={item.link} className="link link-secondary">
+                {item.label}
               </a>
             </li>
           ))}
@@ -25,12 +29,5 @@ export default function FooterGroup({ title, items }) {
       </div>
     </>
   );
-}
-
-{
-  /* <li className="footer-item">
-                <a href="" className="link link-secondary">
-                assassa
-                </a>
-            </li> */
-}
+};
+export default FooterGroup;
